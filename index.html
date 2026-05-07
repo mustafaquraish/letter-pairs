@@ -314,6 +314,74 @@ header{padding:16px 0 0;border-bottom:1px solid var(--border);margin-bottom:16px
   .piece-cubie--corner .piece-cubie-sticker{width:64px;height:64px}
   .piece-cubie--edge .piece-cubie-sticker{width:68px;height:50px}
 }
+
+/* ── Memo Tab ── */
+.memo-container{max-width:900px;margin:0 auto;padding-top:4px}
+.memo-saved-row{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.memo-saved-label{font-size:.75rem;color:var(--text3);white-space:nowrap;margin-right:2px}
+.memo-saved-chip{padding:4px 12px;border-radius:20px;border:1px solid var(--border);background:var(--surface);color:var(--text2);font-size:.82rem;cursor:pointer;transition:all .15s}
+.memo-saved-chip:hover{border-color:var(--accent);color:var(--text)}
+.memo-saved-chip.active{background:rgba(99,102,241,.14);border-color:var(--accent);color:var(--text);font-weight:600}
+.memo-chip-del{padding:4px 10px;border-radius:20px;border:1px solid rgba(239,68,68,.3);background:transparent;color:var(--error);font-size:.78rem;cursor:pointer;transition:background .15s}
+.memo-chip-del:hover{background:rgba(239,68,68,.12)}
+.memo-chip-new{padding:4px 10px;border-radius:20px;border:1px dashed var(--border);background:transparent;color:var(--text3);font-size:.8rem;cursor:pointer;transition:all .15s}
+.memo-chip-new:hover{border-color:var(--accent);color:var(--accent)}
+.memo-textarea{width:100%;padding:14px 16px;background:var(--surface);border:2px solid var(--border);border-radius:var(--radius-lg);color:var(--text);font-size:1.15rem;outline:none;resize:none;line-height:1.6;letter-spacing:3px;font-weight:700;font-family:monospace;text-transform:uppercase;transition:border-color .15s;min-height:56px;max-height:200px;overflow-y:auto}
+.memo-textarea::placeholder{text-transform:none;letter-spacing:0;font-weight:400;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--text3);font-size:.9rem}
+.memo-textarea:focus{border-color:var(--accent)}
+.memo-footer{display:flex;align-items:center;margin-top:8px;gap:8px;flex-wrap:wrap}
+.memo-footer-stats{font-size:.82rem;color:var(--text2);flex:1;min-width:0}
+.memo-footer-actions{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.btn-quiz-active{background:rgba(99,102,241,.18)!important;border-color:var(--accent)!important;color:var(--accent)!important}
+.memo-quiz-bar{display:flex;align-items:center;gap:10px;padding:8px 14px;background:rgba(99,102,241,.07);border:1px solid rgba(99,102,241,.2);border-radius:var(--radius);margin-top:12px;flex-wrap:wrap}
+.memo-quiz-progress{font-size:.82rem;color:var(--text2);flex:1}
+.memo-cells{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.memo-cell{background:var(--surface);border:2px solid var(--border);border-radius:var(--radius-lg);padding:10px 13px;min-width:72px;text-align:center;cursor:pointer;transition:border-color .15s,background .15s,box-shadow .15s;flex-shrink:0}
+.memo-cell:hover{border-color:var(--accent);box-shadow:0 2px 8px rgba(99,102,241,.12)}
+.memo-cell.missing{border-color:rgba(245,158,11,.4);background:rgba(245,158,11,.04)}
+.memo-cell.missing:hover{border-color:var(--warning)}
+.memo-cell.selected{border-color:var(--accent);background:rgba(99,102,241,.09);box-shadow:0 0 0 3px rgba(99,102,241,.15)}
+.memo-cell.solo{opacity:.55;border-style:dashed;cursor:default}
+.memo-cell-num{font-size:.58rem;color:var(--text3);margin-bottom:3px;font-weight:600;letter-spacing:.5px}
+.memo-cell-code{font-size:1.05rem;font-weight:800;letter-spacing:3px}
+.memo-cell-word{font-size:.78rem;margin-top:5px;color:var(--success);max-width:90px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.memo-cell-word.missing{color:var(--warning);font-style:italic}
+.memo-cell-word.blurred{filter:blur(6px);cursor:pointer;transition:filter .2s;user-select:none}
+.memo-cell-word.blurred:hover{filter:blur(1px)}
+.memo-edit-panel{background:var(--surface2);border:2px solid var(--accent);border-radius:var(--radius-lg);padding:16px;margin-top:16px}
+.memo-edit-header{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.memo-edit-pair{font-size:1.4rem;font-weight:800;letter-spacing:4px}
+.memo-edit-close{margin-left:auto;background:none;border:none;color:var(--text3);font-size:1.1rem;cursor:pointer;padding:2px 8px;line-height:1}
+.memo-edit-close:hover{color:var(--text)}
+.memo-story-section{margin-top:24px}
+.memo-story-box{padding:14px 18px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);line-height:2.4;font-size:.95rem;word-break:break-word}
+.memo-story-word{color:var(--text);font-weight:600}
+.memo-story-pair-sup{font-size:.6rem;color:var(--text3);vertical-align:super;margin-left:1px;font-weight:400;letter-spacing:.5px}
+.memo-story-missing{color:var(--warning);font-style:italic;font-size:.85rem}
+.memo-story-sep{color:var(--surface3);margin:0 5px;font-size:.75rem}
+.memo-empty{text-align:center;padding:40px 20px;color:var(--text3)}
+.memo-empty .memo-empty-icon{font-size:2.5rem;margin-bottom:12px}
+.memo-empty p{font-size:.9rem;line-height:1.6;max-width:380px;margin:0 auto}
+.memo-test-area{display:flex;flex-direction:column;gap:14px;margin-top:20px}
+.memo-test-input{width:100%;padding:14px 16px;background:var(--surface);border:2px solid var(--border);border-radius:var(--radius-lg);color:var(--text);font-size:1.35rem;font-family:monospace;font-weight:700;letter-spacing:4px;text-transform:uppercase;outline:none;transition:border-color .15s;text-align:center}
+.memo-test-input:focus{border-color:var(--accent)}
+.memo-test-input.correct{border-color:var(--success);background:rgba(16,185,129,.06)}
+.memo-test-input.wrong{border-color:var(--error);background:rgba(239,68,68,.06)}
+.memo-test-prompt{text-align:center;color:var(--text2);font-size:.95rem;padding:8px 0}
+.memo-test-result{padding:16px 18px;border-radius:var(--radius-lg);font-size:.9rem;line-height:2}
+.memo-test-result.correct{background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.3)}
+.memo-test-result.wrong{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.25)}
+.memo-diff-letter{display:inline-block;padding:1px 3px;border-radius:3px;font-family:monospace;font-weight:700;font-size:1rem;letter-spacing:1px}
+.memo-diff-ok{color:var(--success)}
+.memo-diff-bad{color:var(--error);background:rgba(239,68,68,.15);text-decoration:underline}
+.memo-diff-extra{color:var(--warning);background:rgba(245,158,11,.12)}
+.memo-diff-missing{color:var(--text3);background:var(--surface2);font-style:italic}
+@media(max-width:600px){
+  .memo-cell{min-width:62px;padding:8px 10px}
+  .memo-cell-code{font-size:.9rem;letter-spacing:2px}
+  .memo-textarea{font-size:1rem;letter-spacing:2px}
+  .memo-test-input{font-size:1rem;letter-spacing:2px}
+}
 </style>
 </head>
 <body>
@@ -1118,6 +1186,7 @@ function createDefaultState() {
     userWords: {},
     stats: {},
     letterSet: 'AX',
+    memos: [],
     pieceTrainer: createDefaultPieceTrainerState()
   };
 }
@@ -1223,6 +1292,7 @@ function hydrateState(parsed) {
   state.userWords = parsed && typeof parsed.userWords === 'object' && parsed.userWords ? parsed.userWords : defaults.userWords;
   state.stats = parsed && typeof parsed.stats === 'object' && parsed.stats ? parsed.stats : defaults.stats;
   state.letterSet = nextLetterSet;
+  state.memos = Array.isArray(parsed && parsed.memos) ? parsed.memos : defaults.memos;
   state.pieceTrainer = normalizePieceTrainerState(parsed && parsed.pieceTrainer);
 }
 
@@ -1295,6 +1365,7 @@ function getCloudExportData() {
     userWords: state.userWords,
     stats: state.stats,
     letterSet: state.letterSet,
+    memos: state.memos,
     pieceTrainer: state.pieceTrainer
   };
 }
@@ -1673,6 +1744,27 @@ function disconnectGitHub() {
 // ═══════════════════════════════════════════════════════════
 // BUSINESS LOGIC
 // ═══════════════════════════════════════════════════════════
+
+// Parses a raw uppercase letter string (e.g. "ABCDEF") into
+// an array of cell objects: { type: 'pair'|'solo', pair?, letter? }
+// Solo letters are any "leftover" that don't form a complete pair.
+function parseMemo(raw) {
+  const cells = [];
+  let i = 0;
+  while (i < raw.length) {
+    const a = raw[i];
+    const b = raw[i + 1];
+    if (b !== undefined) {
+      cells.push({ type: 'pair', pair: a + b, a, b });
+      i += 2;
+    } else {
+      cells.push({ type: 'solo', letter: a });
+      i += 1;
+    }
+  }
+  return cells;
+}
+
 function searchPairs(query) {
   const q = normalizeQueryForLetterSet(query.trim().toUpperCase());
   if (!q) return [];
@@ -1981,7 +2073,7 @@ function endPiecePracticeSession() {
 // ═══════════════════════════════════════════════════════════
 // APP STATE (UI)
 // ═══════════════════════════════════════════════════════════
-let currentTab = 'search';
+let currentTab = 'memo';
 let searchQuery = '';
 let searchFocusPair = null;  // pair currently being edited in search
 
@@ -1992,6 +2084,16 @@ let browseEditPair = null;
 let practiceMode = 'forward'; // forward | reverse | fill | weak
 let practiceSession = null; // { deck, index, flipped, stats }
 let piecePracticeSession = null; // { type, deck, index, answer, checked, result, stats }
+
+// ── Memo Tab ──
+let memoText = '';
+let memoSelectedCell = null;   // index into parsed pairs array
+let memoQuizMode = false;
+let memoRevealedSet = new Set();
+let memoSelectedId = null;     // id of the currently loaded saved memo
+let memoTestMode = false;      // showing the recall test
+let memoTestInput = '';        // what the user has typed in test mode
+let memoTestResult = null;     // null | { correct: bool, typed: str }
 
 // ═══════════════════════════════════════════════════════════
 // TOAST
@@ -2029,6 +2131,26 @@ function render() {
     }
   }
 
+  // Restore memo textarea cursor/scroll if it was active
+  if (prevId === 'memoInput' && currentTab === 'memo') {
+    const inp = document.getElementById('memoInput');
+    if (inp) {
+      inp.focus();
+      const pos = prevSel !== null ? prevSel : inp.value.length;
+      inp.setSelectionRange(pos, pos);
+    }
+  }
+
+  // Restore memo test input focus if it was active
+  if (prevId === 'memoTestInput' && currentTab === 'memo') {
+    const inp = document.getElementById('memoTestInput');
+    if (inp) {
+      inp.focus();
+      const pos = prevSel !== null ? prevSel : inp.value.length;
+      inp.setSelectionRange(pos, pos);
+    }
+  }
+
   // Auto-focus the reverse-mode text input when a new card starts
   if (practiceSession && !practiceSession.done &&
       practiceSession.mode === 'reverse' && !practiceSession.reverseEval) {
@@ -2051,14 +2173,15 @@ function renderHeader() {
     </div>
   </div>
   <div class="tabs">
-    ${['search','browse','practice','pieces','settings'].map(t =>
-      `<button class="tab-btn${currentTab===t?' active':''}" data-tab="${t}">${t.charAt(0).toUpperCase()+t.slice(1)}</button>`
+    ${['memo','search','browse','practice','pieces','settings'].map(t =>
+      `<button class="tab-btn${currentTab===t?' active':''}" data-tab="${t}">${t==='memo'?'Memo':t.charAt(0).toUpperCase()+t.slice(1)}</button>`
     ).join('')}
   </div>
 </header>`;
 }
 
 function renderTab() {
+  if (currentTab === 'memo') return renderMemo();
   if (currentTab === 'search') return renderSearch();
   if (currentTab === 'browse') return renderBrowse();
   if (currentTab === 'practice') return renderPractice();
@@ -2166,6 +2289,209 @@ function renderPairCard(pair, inline = false) {
       ).join('')}
     </div>
   </div>` : ''}
+</div>`;
+}
+
+// ── Memo Tab ──────────────────────────────────────────────
+function renderMemo() {
+  const raw = memoText.replace(/[^a-zA-Z]/g, '').toUpperCase();
+  const cells = raw.length > 0 ? parseMemo(raw) : [];
+  const pairs = cells.filter(c => c.type === 'pair');
+  const hasMemos = state.memos && state.memos.length > 0;
+
+  const savedBar = hasMemos || memoText.trim() ? renderSavedMemosBar() : '';
+
+  let bodyHtml = '';
+  if (memoTestMode) {
+    bodyHtml = renderMemoTest(cells);
+  } else if (cells.length === 0) {
+    bodyHtml = renderMemoEmpty();
+  } else {
+    const quizBar = memoQuizMode ? `
+      <div class="memo-quiz-bar">
+        <span class="memo-quiz-progress">Click a pair to reveal · <strong>${memoRevealedSet.size}</strong>/${pairs.length} revealed</span>
+        <button class="btn btn-ghost" id="memoRevealAllBtn" style="padding:4px 12px;font-size:.8rem">Reveal All</button>
+        <button class="btn btn-ghost" id="memoHideAllBtn" style="padding:4px 12px;font-size:.8rem">Hide All</button>
+      </div>` : '';
+
+    const editPanel = (!memoQuizMode && memoSelectedCell !== null) ? renderMemoEditPanel(cells) : '';
+    const storySection = (!memoQuizMode && !memoTestMode) ? renderMemoStory(cells) : '';
+
+    bodyHtml = `
+      ${quizBar}
+      <div class="memo-cells">
+        ${cells.map((c, i) => renderMemoCell(c, i)).join('')}
+      </div>
+      ${editPanel}
+      ${storySection}`;
+  }
+
+  const pairCount = pairs.length;
+  const wordCount = pairs.filter(p => getUserWord(p.pair)).length;
+
+  return `
+<div class="memo-container">
+  ${savedBar}
+  <textarea class="memo-textarea" id="memoInput" rows="2"
+    placeholder="Type your memo letters, e.g. ABCDEFGH…"
+    autocomplete="off" autocorrect="off" autocapitalize="characters"
+    spellcheck="false">${esc(memoText)}</textarea>
+  <div class="memo-footer">
+    <span class="memo-footer-stats">
+      ${pairCount > 0
+        ? `${pairCount} pair${pairCount!==1?'s':''} · ${wordCount}/${pairCount} with words`
+        : 'Enter your memo sequence above'}
+    </span>
+    <div class="memo-footer-actions">
+      ${pairCount > 0 ? `
+        <button class="btn btn-ghost${memoTestMode?' btn-quiz-active':''}" id="memoTestToggleBtn" style="padding:6px 12px;font-size:.82rem">Test Recall</button>
+        <button class="btn btn-ghost${memoQuizMode?' btn-quiz-active':''}" id="memoQuizToggleBtn" style="padding:6px 12px;font-size:.82rem">Quiz Mode</button>
+        ${wordCount > 0 ? `<button class="btn btn-ghost" id="memoPracticeBtn" style="padding:6px 12px;font-size:.82rem">▶ Practice</button>` : ''}
+      ` : ''}
+      <button class="btn btn-ghost" id="memoClearBtn" style="padding:6px 12px;font-size:.82rem">Clear</button>
+      <button class="btn btn-primary" id="memoSaveBtn" style="padding:6px 12px;font-size:.82rem">${memoSelectedId ? 'Update' : 'Save'}</button>
+    </div>
+  </div>
+  ${bodyHtml}
+</div>`;
+}
+
+function renderSavedMemosBar() {
+  const memos = state.memos || [];
+  if (memos.length === 0 && !memoText.trim()) return '';
+  return `
+<div class="memo-saved-row">
+  <span class="memo-saved-label">Saved:</span>
+  ${memos.map(m => `
+    <button class="memo-saved-chip${memoSelectedId===m.id?' active':''}" data-load-memo="${esc(m.id)}">${esc(m.name)}</button>
+    <button class="memo-chip-del" data-delete-memo="${esc(m.id)}" title="Delete">×</button>
+  `).join('')}
+  <button class="memo-chip-new" id="memoNewBtn">+ New</button>
+</div>`;
+}
+
+function renderMemoCell(c, i) {
+  if (c.type === 'solo') {
+    return `<div class="memo-cell solo" title="Unpaired letter">
+      <div class="memo-cell-num">${i+1}</div>
+      <div class="memo-cell-code">${esc(c.letter)}</div>
+    </div>`;
+  }
+  const word = getUserWord(c.pair);
+  const isSelected = memoSelectedCell === i;
+  const isRevealed = memoRevealedSet.has(i);
+  const inQuiz = memoQuizMode;
+  const wordClass = word
+    ? (inQuiz && !isRevealed ? 'blurred' : '')
+    : 'missing';
+  const wordText = word || '?';
+  return `<div class="memo-cell${isSelected?' selected':''}${!word?' missing':''}" data-memo-idx="${i}" title="${esc(c.pair)}${word?': '+esc(word):''}">
+    <div class="memo-cell-num">${i+1}</div>
+    <div class="memo-cell-code">${esc(c.pair)}</div>
+    <div class="memo-cell-word ${wordClass}">${esc(wordText)}</div>
+  </div>`;
+}
+
+function renderMemoEditPanel(cells) {
+  if (memoSelectedCell === null || memoSelectedCell >= cells.length) return '';
+  const c = cells[memoSelectedCell];
+  if (c.type === 'solo') return '';
+  const pair = c.pair;
+  const word = getUserWord(pair);
+  const suggestions = PAIRS_DATA[pair] || [];
+  return `
+<div class="memo-edit-panel">
+  <div class="memo-edit-header">
+    <span class="memo-edit-pair">${esc(pair)}</span>
+    ${word ? `<span style="color:var(--text2);font-size:.9rem">→ <strong>${esc(word)}</strong></span>` : ''}
+    <button class="memo-edit-close" id="memoCloseEditBtn" title="Close">✕</button>
+  </div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+    <input class="input" id="editInput-${esc(pair)}" data-edit-pair="${esc(pair)}"
+      value="${esc(word)}" placeholder="Enter word…" style="flex:1;min-width:160px">
+    <button class="btn btn-primary" data-save-pair="${esc(pair)}">Save</button>
+    ${word ? `<button class="btn btn-ghost" data-clear-pair="${esc(pair)}">Clear</button>` : ''}
+  </div>
+  ${suggestions.length > 0 ? `
+  <div style="margin-top:10px;display:flex;gap:6px;flex-wrap:wrap">
+    ${suggestions.slice(0,8).map(s => `<button class="suggestion-chip" data-pick-word="${esc(pair)}" data-word="${esc(s)}">${esc(s)}</button>`).join('')}
+  </div>` : ''}
+</div>`;
+}
+
+function renderMemoStory(cells) {
+  const pairs = cells.filter(c => c.type === 'pair');
+  if (pairs.length === 0) return '';
+  const parts = pairs.map((c, i) => {
+    const word = getUserWord(c.pair);
+    if (word) {
+      return `<span class="memo-story-word">${esc(word)}<sup class="memo-story-pair-sup">${esc(c.pair)}</sup></span>`;
+    }
+    return `<span class="memo-story-missing">${esc(c.pair)}?</span>`;
+  });
+  return `
+<div class="memo-story-section">
+  <div style="font-size:.78rem;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px">Story</div>
+  <div class="memo-story-box">
+    ${parts.join(`<span class="memo-story-sep">›</span>`)}
+  </div>
+</div>`;
+}
+
+function renderMemoTest(cells) {
+  const expected = memoText.replace(/[^a-zA-Z]/g, '').toUpperCase();
+  const typed = memoTestInput;
+
+  if (memoTestResult) {
+    return renderMemoTestResult(expected, typed);
+  }
+
+  return `
+<div class="memo-test-area">
+  <div class="memo-test-prompt">Type the full memo sequence from memory — letters only, no spaces:</div>
+  <input class="memo-test-input" id="memoTestInput" type="text"
+    value="${esc(memoTestInput)}" placeholder="${expected.length} letters…"
+    autocomplete="off" autocorrect="off" autocapitalize="characters" spellcheck="false">
+  <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+    <button class="btn btn-primary" id="memoTestSubmitBtn" ${typed.length===0?'disabled':''}>Check</button>
+    <button class="btn btn-ghost" id="memoTestResetBtn">Reset</button>
+  </div>
+</div>`;
+}
+
+function renderMemoTestResult(expected, typed) {
+  const correct = typed === expected;
+  const diffHtml = expected.split('').map((ch, i) => {
+    if (i >= typed.length) return `<span class="memo-diff-letter memo-diff-missing">${esc(ch)}</span>`;
+    if (typed[i] === ch) return `<span class="memo-diff-letter memo-diff-ok">${esc(ch)}</span>`;
+    return `<span class="memo-diff-letter memo-diff-bad">${esc(typed[i])}</span>`;
+  }).join('');
+  const extraHtml = typed.length > expected.length
+    ? typed.slice(expected.length).split('').map(ch =>
+        `<span class="memo-diff-letter memo-diff-extra">${esc(ch)}</span>`).join('')
+    : '';
+  return `
+<div class="memo-test-result ${correct?'correct':'wrong'}">
+  <div style="font-weight:700;font-size:1rem;margin-bottom:10px">${correct?'✓ Perfect recall!':'✗ Not quite — here\'s the diff:'}</div>
+  <div style="font-family:monospace;font-size:1.1rem;line-height:2.2;word-break:break-all">
+    ${diffHtml}${extraHtml}
+  </div>
+  ${!correct ? `<div style="margin-top:10px;font-size:.82rem;color:var(--text2)">
+    Your input: <code style="letter-spacing:2px">${esc(typed)}</code><br>
+    Expected:   <code style="letter-spacing:2px">${esc(expected)}</code>
+  </div>` : ''}
+</div>
+<div style="display:flex;gap:8px;justify-content:center;margin-top:14px;flex-wrap:wrap">
+  <button class="btn btn-primary" id="memoTestResetBtn">Try Again</button>
+  <button class="btn btn-ghost" id="memoTestToggleBtn">Exit Test</button>
+</div>`;
+}
+
+function renderMemoEmpty() {
+  return `
+<div class="memo-empty">
+  <div class="memo-empty-icon">🔤</div>
+  <p>Type your memo sequence above (e.g. <strong>ABCDEFGH</strong>) to see pairs, words, and tools to help you memorize them.</p>
 </div>`;
 }
 
@@ -2379,6 +2705,7 @@ function renderPracticeCard() {
         ${s.reverseEval.correct
           ? `✓ Correct! <span style="font-size:.78rem;font-weight:400;color:var(--text3)"> — <span class="kbd-hint">Enter</span> next</span>`
           : `✗ You typed <strong style="letter-spacing:2px">${esc(s.reverseEval.typed)}</strong>
+             &nbsp;·&nbsp; correct: <strong style="letter-spacing:2px">${esc(s.deck[s.index])}</strong>
              <span style="font-size:.78rem;font-weight:400;color:var(--text3)"> — <span class="kbd-hint">Enter</span> / <span class="kbd-hint">1</span>–<span class="kbd-hint">3</span> to continue</span>`
         }
       </div>
@@ -2415,6 +2742,21 @@ function renderPracticeDone() {
   const s = practiceSession;
   const total = s.stats.correct + s.stats.incorrect + (s.stats.unsure||0);
   const pct = total > 0 ? Math.round(s.stats.correct / total * 100) : 0;
+  const missed = s.missedPairs || [];
+  const missedHtml = missed.length > 0 ? `
+  <div style="margin-bottom:24px;text-align:left;max-width:420px;margin-left:auto;margin-right:auto">
+    <div style="font-size:.82rem;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px">
+      Review these (${missed.length})
+    </div>
+    ${missed.map(m => `
+      <div style="display:flex;align-items:center;gap:10px;padding:8px 12px;background:var(--surface);border-radius:var(--radius);margin-bottom:6px;border:1px solid var(--border)">
+        <span style="font-weight:800;letter-spacing:3px;font-size:1rem;color:${m.result==='miss'?'var(--error)':'var(--warning)'}">${esc(m.pair)}</span>
+        <span style="color:var(--text2);font-size:.88rem;flex:1">${m.word ? esc(m.word) : '<em style="color:var(--text3)">no word</em>'}</span>
+        ${m.typed ? `<span style="font-size:.78rem;color:var(--text3)">typed: <code>${esc(m.typed)}</code></span>` : ''}
+        <span style="font-size:.75rem;padding:2px 7px;border-radius:10px;background:${m.result==='miss'?'rgba(239,68,68,.12)':'rgba(245,158,11,.12)'};color:${m.result==='miss'?'var(--error)':'var(--warning)'}">${m.result}</span>
+      </div>
+    `).join('')}
+  </div>` : '';
   return `
 <div class="practice-done">
   <h2>Session Complete! 🎉</h2>
@@ -2424,6 +2766,7 @@ function renderPracticeDone() {
     <div class="session-stat"><div class="n" style="color:var(--warning)">${s.stats.unsure||0}</div><div>Unsure</div></div>
     <div class="session-stat"><div class="n" style="color:var(--error)">${s.stats.incorrect}</div><div>Missed</div></div>
   </div>
+  ${missedHtml}
   <button class="btn btn-primary" id="practiceAgain">Practice Again</button>
   <button class="btn btn-ghost" style="margin-left:8px" id="backToSetup">Change Mode</button>
 </div>`;
@@ -3089,6 +3432,7 @@ function attachHandlers() {
         index: 0,
         flipped: false,
         stats: { correct: 0, incorrect: 0, unsure: 0 },
+        missedPairs: [],
         done: false
       };
       render();
@@ -3221,7 +3565,8 @@ function attachHandlers() {
     const deck = getPracticeQueue(practiceSession.mode);
     practiceSession = {
       mode: practiceSession.mode, deck, index: 0,
-      flipped: false, stats: { correct: 0, incorrect: 0, unsure: 0 }, done: false
+      flipped: false, stats: { correct: 0, incorrect: 0, unsure: 0 },
+      missedPairs: [], done: false
     };
     render();
   });
@@ -3350,6 +3695,182 @@ function attachHandlers() {
       if (ri && ri.value.length >= 1) evaluateReverseAnswer(ri.value);
     });
   }
+
+  // ── Memo Tab handlers ─────────────────────────────────────
+  const memoInputEl = document.getElementById('memoInput');
+  if (memoInputEl) {
+    memoInputEl.addEventListener('input', e => {
+      memoText = e.target.value;
+      // Auto-select the last complete pair so its edit panel opens immediately
+      const raw = memoText.replace(/[^a-zA-Z]/g, '').toUpperCase();
+      const pairs = raw.length > 0 ? parseMemo(raw) : [];
+      const lastPairIdx = pairs.map((p, i) => p.pair ? i : -1).filter(i => i >= 0);
+      memoSelectedCell = lastPairIdx.length > 0 ? lastPairIdx[lastPairIdx.length - 1] : null;
+      render();
+    });
+  }
+
+  // Memo cell click
+  app.querySelectorAll('[data-memo-idx]').forEach(el => {
+    el.addEventListener('click', () => {
+      const idx = parseInt(el.dataset.memoIdx);
+      if (memoQuizMode) {
+        memoRevealedSet.add(idx);
+        render();
+        return;
+      }
+      memoSelectedCell = memoSelectedCell === idx ? null : idx;
+      render();
+      if (memoSelectedCell !== null) {
+        const panel = document.querySelector('.memo-edit-panel');
+        if (panel) panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+  });
+
+  // Close edit panel
+  const memoCloseEditBtn = document.getElementById('memoCloseEditBtn');
+  if (memoCloseEditBtn) memoCloseEditBtn.addEventListener('click', () => { memoSelectedCell = null; render(); });
+
+  // Clear memo
+  const memoClearBtn = document.getElementById('memoClearBtn');
+  if (memoClearBtn) memoClearBtn.addEventListener('click', () => {
+    if (memoText.trim() && !confirm('Clear the current memo?')) return;
+    memoText = ''; memoSelectedId = null; memoSelectedCell = null;
+    memoQuizMode = false; memoRevealedSet = new Set();
+    memoTestMode = false; memoTestInput = ''; memoTestResult = null;
+    render();
+    const inp = document.getElementById('memoInput'); if (inp) inp.focus();
+  });
+
+  // Save memo
+  const memoSaveBtn = document.getElementById('memoSaveBtn');
+  if (memoSaveBtn) memoSaveBtn.addEventListener('click', () => {
+    if (!memoText.trim()) return;
+    if (memoSelectedId) {
+      const memo = (state.memos||[]).find(m => m.id === memoSelectedId);
+      if (memo) { memo.text = memoText; saveState(); showToast('Memo updated'); render(); }
+    } else {
+      const name = prompt('Name this memo:', `Memo ${((state.memos||[]).length + 1)}`);
+      if (name === null) return;
+      if (!state.memos) state.memos = [];
+      const id = Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+      state.memos.push({ id, name: name.trim() || `Memo ${state.memos.length + 1}`, text: memoText });
+      memoSelectedId = id;
+      saveState(); showToast('Memo saved: ' + (name.trim() || 'Untitled')); render();
+    }
+  });
+
+  // Load saved memo chips
+  app.querySelectorAll('[data-load-memo]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.loadMemo;
+      const memo = (state.memos||[]).find(m => m.id === id);
+      if (!memo) return;
+      memoText = memo.text; memoSelectedId = id;
+      memoSelectedCell = null; memoQuizMode = false; memoRevealedSet = new Set();
+      memoTestMode = false; memoTestInput = ''; memoTestResult = null;
+      render();
+    });
+  });
+
+  // Delete memo
+  app.querySelectorAll('[data-delete-memo]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.deleteMemo;
+      const memo = (state.memos||[]).find(m => m.id === id);
+      if (!memo || !confirm(`Delete memo "${memo.name}"?`)) return;
+      state.memos = state.memos.filter(m => m.id !== id);
+      if (memoSelectedId === id) memoSelectedId = null;
+      saveState(); showToast('Memo deleted'); render();
+    });
+  });
+
+  // New memo button
+  const memoNewBtn = document.getElementById('memoNewBtn');
+  if (memoNewBtn) memoNewBtn.addEventListener('click', () => {
+    if (memoText.trim() && !memoSelectedId && !confirm('Start a new memo? Unsaved changes will be lost.')) return;
+    memoText = ''; memoSelectedId = null; memoSelectedCell = null;
+    memoQuizMode = false; memoRevealedSet = new Set();
+    memoTestMode = false; memoTestInput = ''; memoTestResult = null;
+    render();
+    const inp = document.getElementById('memoInput'); if (inp) inp.focus();
+  });
+
+  // Quiz toggle
+  const memoQuizToggleBtn = document.getElementById('memoQuizToggleBtn');
+  if (memoQuizToggleBtn) memoQuizToggleBtn.addEventListener('click', () => {
+    memoQuizMode = !memoQuizMode;
+    memoTestMode = false; memoTestInput = ''; memoTestResult = null;
+    memoRevealedSet = new Set(); memoSelectedCell = null;
+    render();
+  });
+
+  // Test Recall toggle
+  const memoTestToggleBtn = document.getElementById('memoTestToggleBtn');
+  if (memoTestToggleBtn) memoTestToggleBtn.addEventListener('click', () => {
+    memoTestMode = !memoTestMode;
+    memoTestInput = ''; memoTestResult = null;
+    memoQuizMode = false; memoRevealedSet = new Set(); memoSelectedCell = null;
+    render();
+    if (memoTestMode) { const ti = document.getElementById('memoTestInput'); if (ti) ti.focus(); }
+  });
+
+  // Test input handlers
+  const memoTestInputEl = document.getElementById('memoTestInput');
+  if (memoTestInputEl) {
+    memoTestInputEl.addEventListener('input', e => {
+      memoTestInput = e.target.value.replace(/[^a-zA-Z]/g, '').toUpperCase();
+      e.target.value = memoTestInput;
+      memoTestResult = null;
+      render();
+    });
+    memoTestInputEl.addEventListener('keydown', e => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        document.getElementById('memoTestSubmitBtn') && document.getElementById('memoTestSubmitBtn').click();
+      }
+    });
+  }
+
+  const memoTestSubmitBtn = document.getElementById('memoTestSubmitBtn');
+  if (memoTestSubmitBtn) memoTestSubmitBtn.addEventListener('click', () => {
+    const expected = memoText.replace(/[^a-zA-Z]/g, '').toUpperCase();
+    const typed = memoTestInput.replace(/[^a-zA-Z]/g, '').toUpperCase();
+    memoTestResult = { typed, correct: typed === expected };
+    render();
+    if (memoTestResult.correct) showToast('✓ Perfect recall!');
+  });
+
+  const memoTestResetBtn = document.getElementById('memoTestResetBtn');
+  if (memoTestResetBtn) memoTestResetBtn.addEventListener('click', () => {
+    memoTestInput = ''; memoTestResult = null;
+    render();
+    const ti = document.getElementById('memoTestInput'); if (ti) ti.focus();
+  });
+
+  // Reveal all / hide all in quiz mode
+  const memoRevealAllBtn = document.getElementById('memoRevealAllBtn');
+  if (memoRevealAllBtn) memoRevealAllBtn.addEventListener('click', () => {
+    const raw = memoText.replace(/[^a-zA-Z]/g, '').toUpperCase();
+    parseMemo(raw).forEach((p, i) => { if (p.pair) memoRevealedSet.add(i); });
+    render();
+  });
+
+  const memoHideAllBtn = document.getElementById('memoHideAllBtn');
+  if (memoHideAllBtn) memoHideAllBtn.addEventListener('click', () => {
+    memoRevealedSet = new Set(); render();
+  });
+
+  // Practice memo (launches forward practice with only memo pairs)
+  const memoPracticeBtn = document.getElementById('memoPracticeBtn');
+  if (memoPracticeBtn) memoPracticeBtn.addEventListener('click', () => {
+    const raw = memoText.replace(/[^a-zA-Z]/g, '').toUpperCase();
+    const deck = parseMemo(raw).filter(p => p.pair && getUserWord(p.pair)).map(p => p.pair);
+    if (deck.length === 0) { showToast('No pairs with words to practice'); return; }
+    practiceSession = { mode: 'forward', deck, index: 0, flipped: false, stats: { correct: 0, incorrect: 0, unsure: 0 }, missedPairs: [], done: false };
+    currentTab = 'practice'; render();
+  });
 }
 
 // Called when the user submits a typed pair in reverse mode.
@@ -3372,8 +3893,15 @@ function handleAnswer(answer) {
     // skip: no stats
   } else {
     if (answer === 'know') s.stats.correct++;
-    else if (answer === 'unsure') s.stats.unsure = (s.stats.unsure||0)+1;
-    else s.stats.incorrect++;
+    else if (answer === 'unsure') {
+      s.stats.unsure = (s.stats.unsure||0)+1;
+      if (!s.missedPairs) s.missedPairs = [];
+      s.missedPairs.push({ pair, word: getUserWord(pair), typed: s.reverseEval?.typed || null, result: 'unsure' });
+    } else {
+      s.stats.incorrect++;
+      if (!s.missedPairs) s.missedPairs = [];
+      s.missedPairs.push({ pair, word: getUserWord(pair), typed: s.reverseEval?.typed || null, result: 'miss' });
+    }
     updateStats(pair, answer);
   }
 
@@ -4172,9 +4700,9 @@ render();
 if (typeof window !== 'undefined' && window.location && window.location.search && /[?&]code=/.test(window.location.search)) {
   processGitHubOAuthRedirect();
 }
-// Focus search on initial load
+// Focus memo textarea on initial load
 (function() {
-  const inp = document.getElementById('searchInput');
+  const inp = document.getElementById('memoInput');
   if (inp) inp.focus();
 })();
 </script>
