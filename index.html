@@ -2407,14 +2407,14 @@ function renderMemoEditPanel(cells) {
     <button class="memo-edit-close" id="memoCloseEditBtn" title="Close">✕</button>
   </div>
   <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
-    <input class="input" id="editInput-${esc(pair)}" data-edit-pair="${esc(pair)}"
-      value="${esc(word)}" placeholder="Enter word…" style="flex:1;min-width:160px">
+    <input class="edit-word-input" id="editInput-${esc(pair)}" data-edit-pair="${esc(pair)}"
+      value="${esc(word)}" placeholder="Enter word…" autocomplete="off" autocorrect="off" spellcheck="false">
     <button class="btn btn-primary" data-save-pair="${esc(pair)}">Save</button>
     ${word ? `<button class="btn btn-ghost" data-clear-pair="${esc(pair)}">Clear</button>` : ''}
   </div>
   ${suggestions.length > 0 ? `
   <div style="margin-top:10px;display:flex;gap:6px;flex-wrap:wrap">
-    ${suggestions.slice(0,8).map(s => `<button class="suggestion-chip" data-pick-word="${esc(pair)}" data-word="${esc(s)}">${esc(s)}</button>`).join('')}
+    ${suggestions.map(s => `<button class="suggestion-pill${word===s?' selected':''}" data-pick-word="${esc(pair)}" data-word="${esc(s)}">${esc(s)}</button>`).join('')}
   </div>` : ''}
 </div>`;
 }
